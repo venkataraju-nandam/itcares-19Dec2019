@@ -1,12 +1,18 @@
 package com.org.app.poc.itcares.bean;
 
 import java.util.Objects;
+import java.util.Optional;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author Venkata.Nandam
+ *
+ */
 @Entity
 @Table(name = "cities")
 public class City {
@@ -90,4 +96,14 @@ public class City {
 
         return builder.toString();
     }
+
+	/**
+	 * @param id
+	 * @return
+	 *  Created to test with Mockito HelloServiceTest
+	 */
+	public Optional<City> findById(long id) {
+		
+		return null;
+	}
 }

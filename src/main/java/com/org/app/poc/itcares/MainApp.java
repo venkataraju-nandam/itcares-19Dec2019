@@ -1,6 +1,7 @@
 package com.org.app.poc.itcares;
 
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -10,11 +11,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
-import com.org.app.poc.itcares.bean.AdministratorEntity;
-import com.org.app.poc.itcares.repository.AdminReposotiry;
+import com.org.app.poc.itcares.bean.CredentialEntity;
+import com.org.app.poc.itcares.repository.CredentialReposotiry;
 
 
 
@@ -53,11 +55,14 @@ public class MainApp implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
     
     @Autowired
-    AdminReposotiry repository;
+    CredentialReposotiry repository;
+    
+    static ApplicationContext ctx;
 
     public static void main(String[] args) {
-        SpringApplication.run(MainApp.class, args);
+        ctx = SpringApplication.run(MainApp.class, args);
         System.out.println("********** SpringBoot Main App *****  Started  ***** ");
+
     }
     
     
@@ -67,13 +72,19 @@ public class MainApp implements CommandLineRunner {
 //        Optional<AdministratorEntity> adminEntity = repository.findById(2L);
     		logger.info(" -********** SpringBoot Main App *****  Repository Count  = " + repository.count());
     	 
-    		List<AdministratorEntity> adminEntities = repository.findAll();
+    		List<CredentialEntity> adminEntities = repository.findAll();
         
         	logger.info("********** SpringBoot Main App *****   Entities Accessed *****");
  
         	if (adminEntities !=null && !adminEntities.isEmpty()) {
         			logger.info(" ********** SpringBoot Main App *****    Entity List Retriving -  adminEntities.get(0) -> "+ adminEntities.get(0));
         	}
+        	
+//            String[] beanNames = ctx.getBeanDefinitionNames();
+//            Arrays.sort(beanNames);
+//            for (String beanName : beanNames) {
+//                System.out.println("********** SpringBoot Main App *****  BEANS ->  ***** "+ beanName);
+//            }
     }
 }
 

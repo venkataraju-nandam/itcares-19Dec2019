@@ -28,6 +28,8 @@ import com.org.app.poc.itcares.repository.CityRepository;
 import com.org.app.poc.itcares.service.CityService;
 import com.org.app.poc.itcares.service.CredentialsService;
 
+import junit.framework.Assert;
+
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class HelloServiceTest {
 	
@@ -64,19 +66,22 @@ public class HelloServiceTest {
 		assertEquals("Hello Service", response.getBody());
 	}
 	
+
 	@Test
 	public void credentialsTest() {
 	CredentialEntity credentials = new CredentialEntity("Raju","password");
 //	when(credentialsRepository.findAll().add(credentials));
-	when(credService.findAll().add(credentials));
+//	when(credService.findAll().add(credentials));
 	
-	logger.info("Executing HelloServiceTest -> credentialsTest() " + credService.findAll().get(0));
-	assertEquals(credentials, credService.findAll().get(0));	
+	CredentialEntity credentialsFromDB = credService.findAll().get(0);
+	logger.info("Executing HelloServiceTest -> credentialsTest() " + credentialsFromDB);
+	assertEquals(credentials.getUserId(), credentialsFromDB.getUserId());	
+//	 Assert.assertEquals(credentials, credentialsFromDB);
+
 	}
 	
-private void when(boolean add) {
+	private void when(boolean add) {
 		// TODO Auto-generated method stub
-		
 	}
 
 //	@Test

@@ -19,7 +19,6 @@ import com.org.app.poc.itcares.bean.CredentialEntity;
 import com.org.app.poc.itcares.repository.CredentialReposotiry;
 
 
-
  
 /** 
  * @author Venkata.Nandam
@@ -47,10 +46,11 @@ You need component scan for all your packages and entity scan for all your entit
  
  */
 
+
+//@EnableZuulProxy
 @SpringBootApplication
 @ComponentScan
 @EntityScan
-
 public class MainApp implements CommandLineRunner {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
     

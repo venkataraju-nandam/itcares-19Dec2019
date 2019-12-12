@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name ="administrators")
 public class CredentialEntity {
-	
 	/**
 	 * The id property is annotated with @Id so that JPA will recognize it as the object’s ID. Also, 
 	 * @GeneratedValue annotation enable its value generated automatically.
@@ -19,11 +18,13 @@ public class CredentialEntity {
 	private long id;
 	
 	@Column (name = "user_id")
-	private String userId;
+	private String userId;	
 	
 	@Column(name = "password")
 	private String pwd;
+
 	
+//	*********************** Added all the given below methods for Junit testing with HelloServiceTest*********
 	
 	public CredentialEntity() {
 		// TODO Auto-generated constructor stub
@@ -40,12 +41,29 @@ public class CredentialEntity {
 		this.pwd=pwd;
 	}
 
-
-
-
 	@Override
     public String toString() {
         return "AdministrorEntity [id=" + userId + ", firstName=" + pwd + "]";
     }
+	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+
+
+
+
 
 }

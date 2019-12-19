@@ -22,12 +22,12 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 
 import com.org.app.poc.itcares.bean.CredentialEntity;
+import com.org.app.poc.itcares.bean.UserEntity;
 import com.org.app.poc.itcares.bean.City;
 import com.org.app.poc.itcares.repository.CredentialReposotiry;
 import com.org.app.poc.itcares.repository.CityRepository;
 import com.org.app.poc.itcares.service.CityService;
 import com.org.app.poc.itcares.service.CredentialsService;
-
 import junit.framework.Assert;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -47,14 +47,6 @@ public class HelloServiceTest {
     @Autowired
     CredentialsService credService;
 	
-//	@MockBean
-//	City cityMock;
-//	
-//	@MockBean
-//	CityRepository cityMock;
-//	
-//	@Autowired
-//	CityService cityService;
 	
 	@Test
 	public void getHello()throws Exception{
@@ -67,11 +59,10 @@ public class HelloServiceTest {
 	}
 	
 
+
 	@Test
 	public void credentialsTest() {
 	CredentialEntity credentials = new CredentialEntity("Raju","password");
-//	when(credentialsRepository.findAll().add(credentials));
-//	when(credService.findAll().add(credentials));
 	
 	CredentialEntity credentialsFromDB = credService.findAll().get(0);
 	logger.info("Executing HelloServiceTest -> credentialsTest() " + credentialsFromDB);
@@ -80,7 +71,7 @@ public class HelloServiceTest {
 
 	}
 	
-	private void when(boolean add) {
+	private void when(UserEntity userEntity) {
 		// TODO Auto-generated method stub
 	}
 

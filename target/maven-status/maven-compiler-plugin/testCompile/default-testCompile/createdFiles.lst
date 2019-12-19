@@ -1,1 +1,10 @@
+com\org\app\poc\itcares\StepDefsIntegrationTest.class
+com\org\app\poc\itcares\SpringIntegrationTest.class
+com\org\app\poc\itcares\CityRepositoryIntegrationTest.class
+com\org\app\poc\itcares\ResponseResults.class
+com\org\app\poc\itcares\HeaderSettingRequestCallback.class
 com\org\app\poc\itcares\HelloServiceTest.class
+com\org\app\poc\itcares\EmployeeRepositoryIntegrationTest.class
+com\org\app\poc\itcares\CucumberTest.class
+com\org\app\poc\itcares\SpringIntegrationTest$ResponseResultErrorHandler.class
+com\org\app\poc\itcares\SpringIntegrationTest$1.class

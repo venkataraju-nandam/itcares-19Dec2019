@@ -12,8 +12,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
+import org.springframework.web.client.RestTemplate;
 
 import com.org.app.poc.itcares.bean.CredentialEntity;
 import com.org.app.poc.itcares.repository.CredentialReposotiry;
@@ -86,17 +88,16 @@ public class MainApp implements CommandLineRunner {
 //                System.out.println("********** SpringBoot Main App *****  BEANS ->  ***** "+ beanName);
 //            }
     }
+    
+    
+    /**
+     * @return
+     * Adding this method Cucumber Integration test	
+     */
+    @Bean
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
+    
 }
 
-
-
-
-
-// ACTUAL CLASS CREATED - WORKING.......
-//@SpringBootApplication
-//public class MainApp {
-//    public static void main(String[] args) {
-//        SpringApplication.run(MainApp.class, args);
-//        System.out.println("SpringBoot Main App Started .....");
-//    }  
-//}

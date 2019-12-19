@@ -11,12 +11,16 @@ import com.org.app.poc.itcares.UserDefinedException;
 import com.org.app.poc.itcares.bean.UserEntity;
 import com.org.app.poc.itcares.repository.UserRepository;
 
+import lombok.RequiredArgsConstructor;
+
 /**
  * @author Venkata.Nandam
  * This UserService class performas the operations of UserEntity
  *
  */
+
 @Service
+@RequiredArgsConstructor
 public class UserService implements IUserService {
 
     @Autowired
@@ -54,29 +58,33 @@ public class UserService implements IUserService {
         }
     }
     
-    
-    public UserEntity createOrUpdateUser(UserEntity entity) throws UserDefinedException 
-    {
-        Optional<UserEntity> user = repository.findById(entity.getId());
-        if(user.isPresent()) 
-        {
-       
-            UserEntity newUser = user.get();
-         
-            newUser.setFirstName(entity.getFirstName());
-            newUser.setLastName(entity.getLastName());
-            newUser.setId(entity.getId());
-            newUser.setUsername(entity.getUsername());
- 
-            newUser = repository.save(newUser);
-             
-            return newUser;
-        } else {
-            entity = repository.save(entity);
-             
-            return entity;
-        }
+    public UserEntity save(UserEntity user) {
+        return repository.save(user);
     }
+    
+    
+//    public UserEntity createOrUpdateUser(UserEntity entity) throws UserDefinedException 
+//    {
+//        Optional<UserEntity> user = repository.findById(entity.getId());
+//        if(user.isPresent()) 
+//        {
+//       
+//            UserEntity newUser = user.get();
+//         
+////            newUser.setFirstName(entity.getFirstName());
+////            newUser.setLastName(entity.getLastName());
+////            newUser.setId(entity.getId());
+////            newUser.setUsername(entity.getUsername());
+// 
+//            newUser = repository.save(newUser);
+//             
+//            return newUser;
+//        } else {
+//            entity = repository.save(entity);
+//             
+//            return entity;
+//        }
+//    }
     
     public void deleteUserById(Long id) throws UserDefinedException 
     {

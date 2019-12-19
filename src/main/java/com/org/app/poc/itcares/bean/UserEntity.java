@@ -9,12 +9,16 @@ import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+@Data
 @Entity
 @Table(name = "fw_user1")
+@RequiredArgsConstructor
 public class UserEntity {
 	
     @Id
@@ -44,10 +48,10 @@ public class UserEntity {
 	@Column (name = "USER_NAME")
     private String username;
 	
-	@Override
-    public String toString() {
-        return "UserEntity [person id=" + id + ", firstName=" + firstName + "]";
-    }
+//	@Override
+//    public String toString() {
+//        return "UserEntity [person id=" + id + ", firstName=" + firstName + "]";
+//    }
 
 
 	

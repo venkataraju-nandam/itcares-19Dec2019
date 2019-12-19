@@ -9,7 +9,8 @@ public interface IUserService {
 	
 	List<UserEntity> getAllUsers();
 	UserEntity getUserById(Long id) throws UserDefinedException;
-	UserEntity createOrUpdateUser(UserEntity entity) throws UserDefinedException;
+//	UserEntity createOrUpdateUser(UserEntity entity) throws UserDefinedException;
 	void deleteUserById(Long id) throws UserDefinedException;
+	UserEntity save(UserEntity user);
 
 }

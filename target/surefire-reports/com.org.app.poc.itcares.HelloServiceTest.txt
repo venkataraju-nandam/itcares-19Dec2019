@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.org.app.poc.itcares.HelloServiceTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.354 s - in com.org.app.poc.itcares.HelloServiceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.327 s - in com.org.app.poc.itcares.HelloServiceTest

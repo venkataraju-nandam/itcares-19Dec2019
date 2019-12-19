@@ -7,8 +7,8 @@ import com.org.app.poc.itcares.bean.CredentialEntity;
 
 /**
  * @author Venkata.Nandam
- * By this simple INTERFACE extension, EmployeeRepository inherits several methods for working with 
- * entity persistence, including methods for saving, deleting, and finding Employee entities.
+ * By this simple INTERFACE extension, UserRepository inherits several methods for working with 
+ * entity persistence, including methods for saving, deleting, and finding User entities.
  *
  */
 @Repository
